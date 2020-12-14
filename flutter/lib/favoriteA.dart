@@ -2,7 +2,6 @@
 
 //------------------------- TapboxA ----------------------------------
 
-
 import 'package:flutter/material.dart';
 
 class TapboxA extends StatefulWidget {

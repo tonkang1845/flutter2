@@ -5,6 +5,10 @@
 import 'package:flutter/material.dart';
 
 import 'favoriteA.dart';
+import 'favoriteB.dart';
+import 'package:flutter/foundation.dart';
+
+import 'favoriteC.dart';
 
 void main() => runApp(MyApp());
 
@@ -51,14 +55,7 @@ Widget buttonSection = Container(
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      GestureDetector(
-        onTap:(){
-              Navigator.push(context, 
-              MaterialPageRoute(builder: (context) =>TapboxA())
-            );
-        },
-            child:_buildButtonColumn(color, Icons.call, 'CALL')
-      ),
+      _buildButtonColumn(color, Icons.call, 'CALL'),
       _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
       _buildButtonColumn(color, Icons.share, 'SHARE'),
     ],
@@ -85,16 +82,19 @@ Widget textSection = Container(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: ListView(            
-      children: [
+        body: ListView(       
+      children: [ 
         Image.asset('images/lake.jpg',            
                    width: 600,            
                    height: 240,            
                    fit: BoxFit.cover,            
                    ),            
       titleSection,
-      buttonSection,  
-      textSection,   
+      buttonSection, 
+      textSection,
+      TapboxA(),
+      ParentWidget(),
+      ParentWidget4(),
       ],            
         ),
       ),
