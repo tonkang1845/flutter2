@@ -75,7 +75,7 @@ Widget textSection = Container(
     softWrap: true,
   ),
 );
-///////////////////////////////////////////
+/////////////////////////////////////////////
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
