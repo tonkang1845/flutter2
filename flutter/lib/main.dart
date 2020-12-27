@@ -4,11 +4,6 @@
 
 import 'package:flutter/material.dart';
 
-import 'favoriteA.dart';
-import 'favoriteB.dart';
-import 'package:flutter/foundation.dart';
-
-import 'favoriteC.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,6 +15,7 @@ class MyApp extends StatelessWidget {
   padding: const EdgeInsets.all(32),
   child: Row(
     children: [
+      
       Expanded(
         /*1*/
         child: Column(
@@ -29,19 +25,20 @@ class MyApp extends StatelessWidget {
             Container(
               padding: const EdgeInsets.only(bottom: 8),
               child: Text(
-                'Oeschinen Lake Campground',
+                'สถานการณ์โควิดวันนี้ ติดเชื้อเพิ่ม 110 ราย ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Text(
-              'Kandersteg, Switzerland',
+              'เมื่อ วันที่ 26 ธันวาคม พ.ศ.2563',
               style: TextStyle(
-                color: Colors.grey[500],
+                color: Colors.black,
               ),
             ),
           ],
+          
         ),
       ),
       /*3*/
@@ -66,40 +63,58 @@ Widget buttonSection = Container(
 Widget textSection = Container(
   padding: const EdgeInsets.all(32),
   child: Text(
-    'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-        'Alps. Situated 1,578 meters above sea level, it is one of the '
-        'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-        'half-hour walk through pastures and pine forest, leads you to the '
-        'lake, which warms to 20 degrees Celsius in the summer. Activities '
-        'enjoyed here include rowing, and riding the summer toboggan run.',
+    'ผู้ป่วยยืนยันติดเชื้อในประเทศ 64 ราย'
+'ติดเชื้อในแรงงานต่างด้าว (คัดกรองเชิงรุก) 30 ราย'
+'สถานที่กักกันที่รัฐจัดให้ 16 ราย'
+'ผู้เดินทางไม่เข้าสถานที่กักกัน 0 ราย'
+'รักษาหายเพิ่มขึ้น 15 ราย'
+'กลับบ้านแล้ว 4,152 ราย'
+'อยู่ระหว่างรักษาตัว 1,808 ราย'
+'ไม่มีรายงานผู้เสียชีวิต ยอดผู้เสียชีวิต 60 ศพ'
+'ยอดผู้ป่วยยืนยันสะสม 6,020 ราย นับเป็นรายที่ 5,911-6,020'
+'ประเทศไทย เป็นอันดับที่ 144 ของโลก'
+'เดินทางมาจากต่างประเทศ 16 ราย แยกเป็น เมียนมา 2 ราย,'
+'รัสเซีย 4 ราย,อินเดีย 1 ราย ,ซาอุดิอาระเบีย 1 ราย,ตุรกี 1 ราย'
+' สหราชอาณาจักร 1 ราย,โมซัมบิก 1 ราย,สหรัฐอเมริกา 3 ราย,เยอรมนี 1 ราย, ฝรั่งเศส 1 ราย '
+'ผู้ติดเชื้อในแรงงานต่างด้าวจากการคัดกรองเชิงรุก ยอดสะสม 1,338 ราย',
     softWrap: true,
   ),
 );
 /////////////////////////////////////////////
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      title: 'Thailand covid',
+      
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('Covid-19 in Thailand '),
+          backgroundColor: Colors.green[500],
         ),
         body: ListView(       
       children: [ 
-        Image.asset('images/lake.jpg',            
+        Image.asset('images/covid19.jpg',            
                    width: 600,            
-                   height: 240,            
-                   fit: BoxFit.cover,            
+                   height:220,            
+                  fit: BoxFit.cover,
                    ),            
       titleSection,
       buttonSection, 
       textSection,
-      TapboxA(),
-      ParentWidget(),
-      ParentWidget4(),
+      
+      Image.asset('images/covid1.jpg',            
+                   width: 50,            
+                   height:400,            
+                  fit: BoxFit.cover,
+                   ),  
       ],            
         ),
       ),
     );
   }
+
+  
+final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
+
   ////////////////////////////////////////////////////////
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
@@ -150,7 +165,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           child: IconButton(
             padding: EdgeInsets.all(0),
             alignment: Alignment.centerRight,
-            icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
+            icon: (_isFavorited ? Icon(Icons.favorite) : Icon(Icons.favorite_border)),
             color: Colors.red[500],
             onPressed: _toggleFavorite,
           ),
@@ -165,3 +180,4 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
     );
   }
 }
+///////////////////////////////////////////////////////////////////////
